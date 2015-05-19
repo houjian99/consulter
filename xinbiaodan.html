@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>jQuery UI 日期选择器（Datepicker） - 默认功能</title>
+  <title>前段</title>
   <link rel="stylesheet" href="jquery-ui.min.css">
   <script src="jquery.min.js"></script>
   <script src="jquery-ui.min.js"></script>
@@ -16,6 +16,8 @@
 <body>
 <form name="f1">
 <p class="ptxt">出行日期：<input type="text" id="datepicker" name= "daystart"></p>
+
+
 
 <p class="total-day control-group">旅行天数<span class="cell-wrap-select">
 
@@ -98,14 +100,22 @@
 <option value="法国周边">法国周边</option>
 </select>
 
-
-
-
+<div class="cultural">
+<p >选择你喜欢的类型 </p>
+<input type="checkbox" name="cultural1" value="village"/>
+  小镇
+<input type="checkbox" name="cultural1" value="ville"/>
+  城市
+<input type="checkbox" name="cultural1" value="culture" />
+  文化
+<input type="checkbox" name="cultural1"  value="sea"/>
+  山水风光
+</div>
 
 
 
 <div class="comment-p">
-<p><i class="icon-pchelper-n5"></i> 补充说明我的需求</p>
+<p><i class="icon-pchelper-n5"></i> 补充说明你的需求</p>
 <TEXTAREA name="need" rows=5 COLS=40>你需要的具体要求</TEXTAREA> <P>
 </div>
 
@@ -115,8 +125,9 @@
 
 
 
-<button onclick="destination(document.f1.s1)">提交</button>
- 
+<button onclick="destination()">提交</button>
+
+ <div class="report">
 	<p>出行日期 </p> <p id="data_t"> </p>
 	
 	<p>旅行人数 </p>
@@ -131,27 +142,75 @@
 	<p id="adult_t"> </p>
 	<p>儿童	</p>
 	<p id="child_t"> </p>
- <script>
- 
+	<p>推荐路线	</p>
+	<a id="ligne_t" href="http://www.ipiaoling.com"> </a>
 	
+</div>	
+	
+ <script type="text/javascript" language="javascript">
  
 
- function destination(destination1){
+ 
+
+ function destination(){
 	
+	cultural1=document.forms[0].cultural1
 	var adult=document.f1.adult.options[document.f1.adult.selectedIndex].value;
-	var child=document.f1.p1.options[document.f1.p1.selectedIndex].value-document.f1.adult.options[document.f1.adult.selectedIndex].value;
+	var child;
+	if(document.f1.p1.options[document.f1.p1.selectedIndex].value>=document.f1.adult.options[document.f1.adult.selectedIndex].value){
+		child=document.f1.p1.options[document.f1.p1.selectedIndex].value-document.f1.adult.options[document.f1.adult.selectedIndex].value;
+		document.getElementById("child_t").innerHTML=child; 
+	}
+	else{
+		document.getElementById("child_t").innerHTML=0;
+	}
 	var people=document.f1.p1.options[document.f1.p1.selectedIndex].value;
 	var text=document.f1.need.value;
 	var data=document.f1.daystart.value;
-	var dest_wish=destination1.options[destination1.selectedIndex].value;
+	var dest_wish=document.f1.s1.options[document.f1.s1.selectedIndex].value;
 	var day=document.f1.d1.options[document.f1.d1.selectedIndex].value;
+	var ligne_fav;
+	
+	if(people>=2&& day<=3 && dest_wish=="巴黎" )
+	{
+	
+	if (cultural1[1].checked)
+	{
+	ligne_fav="巴黎市区一日游";
+	document.getElementById("ligne_t").href="http://www.ipiaoling.com/tour/paris-one-day/"
+	}
+	if (cultural1[0].checked)
+	{
+	ligne_fav="巴黎王宫乡村一日游";
+	document.getElementById("ligne_t").href="http://www.ipiaoling.com/tour/palais-village/"
+	}
+	if (cultural1[2].checked)
+	{
+	ligne_fav="圣米歇尔山2日游";
+	document.getElementById("ligne_t").href="http://www.ipiaoling.com/tour/saint_michel_2day/"
+	}
+	if (cultural1[3].checked)
+	{
+	ligne_fav="巴黎+普罗旺斯+蔚蓝海岸 10天";
+	document.getElementById("ligne_t").href="http://www.ipiaoling.com/tour/france_10/"
+	}
+	
+	
+	}	
+	else{
+	ligne_fav="no";
+	}
+	
 	document.getElementById("des_t").innerHTML=dest_wish;
 	document.getElementById("day_t").innerHTML=day; 
 	document.getElementById("data_t").innerHTML=data; 
 	document.getElementById("text_t").innerHTML=text; 
 	document.getElementById("people_t").innerHTML=people; 
 	document.getElementById("adult_t").innerHTML=adult; 
-	document.getElementById("child_t").innerHTML=child; 
+	
+	
+	
+	document.getElementById("ligne_t").innerHTML=ligne_fav; 
 }
 
  </script>
