@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="jquery-ui.min.css">
   <script src="jquery.min.js"></script>
   <script src="jquery-ui.min.js"></script>
+  
   <link rel="stylesheet" href="style.css">
   <script>
   $(function() {
@@ -149,7 +150,37 @@
 	
  <script type="text/javascript" language="javascript">
  
+function loadXMLDoc(filename)
+{
+if (window.XMLHttpRequest)
+  {
+  xhttp=new XMLHttpRequest();
+  }
+else // code for IE5 and IE6
+  {
+  xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xhttp.open("GET",filename,false);
+xhttp.send();
+return xhttp.responseXML;
+}
 
+function readOneLable(nodeName,xmlName,childNodeName,nodeNo)
+  {  
+    var my_array = new Array();  
+    //加载xml文件  
+    xmlDoc=loadXMLDoc(xmlName);  
+                  
+    //取得节点名为nodeName的节点  
+        var d = xmlDoc.getElementsByTagName(nodeName)[nodeNo];                
+    var ab = d.childNodes;  
+    for(var i = 0;i<ab.length;i++){  
+          if(ab[i].nodeName == childNodeName){  
+            my_array.push(ab[i].childNodes[0].nodeValue);                         
+          }  
+    }  
+    return my_array;  
+	}
  
 
  function destination(){
@@ -176,23 +207,23 @@
 	
 	if (cultural1[1].checked)
 	{
-	ligne_fav="巴黎市区一日游";
-	document.getElementById("ligne_t").href="http://www.ipiaoling.com/tour/paris-one-day/"
+	ligne_fav=readOneLable("itineraryId","http://localhost/web/itinerary.xml","itineraryName",0);
+	document.getElementById("ligne_t").href=readOneLable("itineraryId","itinerary.xml","itineraryHerf",0);
 	}
 	if (cultural1[0].checked)
 	{
-	ligne_fav="巴黎王宫乡村一日游";
-	document.getElementById("ligne_t").href="http://www.ipiaoling.com/tour/palais-village/"
+	ligne_fav=readOneLable("itineraryId","http://localhost/web/itinerary.xml","itineraryName",1);
+	document.getElementById("ligne_t").href=readOneLable("itineraryId","itinerary.xml","itineraryHerf",1);
 	}
 	if (cultural1[2].checked)
 	{
-	ligne_fav="圣米歇尔山2日游";
-	document.getElementById("ligne_t").href="http://www.ipiaoling.com/tour/saint_michel_2day/"
+	ligne_fav=readOneLable("itineraryId","http://localhost/web/itinerary.xml","itineraryName",2);
+	document.getElementById("ligne_t").href=readOneLable("itineraryId","itinerary.xml","itineraryHerf",2);
 	}
 	if (cultural1[3].checked)
 	{
-	ligne_fav="巴黎+普罗旺斯+蔚蓝海岸 10天";
-	document.getElementById("ligne_t").href="http://www.ipiaoling.com/tour/france_10/"
+	ligne_fav=readOneLable("itineraryId","http://localhost/web/itinerary.xml","itineraryName",3);
+	document.getElementById("ligne_t").href=readOneLable("itineraryId","itinerary.xml","itineraryHerf",3);
 	}
 	
 	
@@ -212,6 +243,9 @@
 	
 	document.getElementById("ligne_t").innerHTML=ligne_fav; 
 }
+
+ 
+
 
  </script>
 </body>
