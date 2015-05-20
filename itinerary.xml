@@ -1,0 +1,20 @@
+<states>            
+      <itinerarys>  
+           <itineraryId >001  
+                <itineraryName>巴黎市区一日游</itineraryName>  
+                <itineraryHerf>http://www.ipiaoling.com/tour/paris-one-day/</itineraryHerf>  
+           </itineraryId>  
+           <itineraryId>002  
+                <itineraryName>巴黎王宫乡村一日游</itineraryName>  
+                <itineraryHerf>http://www.ipiaoling.com/tour/palais-village/</itineraryHerf>  
+           </itineraryId>  
+           <itineraryId>003  
+                <itineraryName>圣米歇尔山2日游</itineraryName>  
+                <itineraryHerf>http://www.ipiaoling.com/tour/saint_michel_2day/</itineraryHerf>  
+           </itineraryId>  
+		   <itineraryId>003  
+                <itineraryName>巴黎+普罗旺斯+蔚蓝海岸 10天</itineraryName>  
+                <itineraryHerf>http://www.ipiaoling.com/tour/france_10/</itineraryHerf>  
+           </itineraryId>  
+        </itinerarys>  
+  </states>  
