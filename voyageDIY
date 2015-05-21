@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>飘零自由行</title>
+  <link rel="stylesheet" href="jquery-ui.min.css">
+  <script src="jquery.min.js"></script>
+  <script src="jquery-ui.min.js"></script>
+   <script src="itinerary.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+</head>
+<body>
+<form name="f1">
+<p class="ptxt">出行日期：<input type="text" id="datepicker" name= "daystart"></p>
+
+
+<p class="total-day control-group">旅行天数<span class="cell-wrap-select">
+
+<select name="d1" >
+
+<option value=1>1</option>
+<option value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+<option value=7>7</option>
+<option value=8>8</option>
+<option value=9>9</option>
+<option value=10>10</option>
+<option value=11>11</option>
+<option value=12>12</option>
+<option value=13>13</option>
+<option value=14>14</option>
+<option value=15>15</option>
+<option value=16>16</option>
+<option value=17>17</option>
+<option value=18>18</option>
+<option value=19>19</option>
+<option value=20>20</option>
+<option value=21>21</option>
+<option value=22>22</option>
+<option value=23>23</option>
+<option value=24>24</option>
+<option value=25>25</option>
+<option value=26>26</option>
+<option value=27>27</option>
+<option value=28>28</option>
+<option value=29>29</option>
+<option value=30>30</option>
+</select>
+
+
+<p class="adult control-group">成人<span class="cell-wrap-select">
+
+<select name="adult" >
+<option value=2>2</option>
+<option value=1>1</option>
+<option value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+<option value=7>7</option>
+<option value=8>8</option>
+<option value="9人及以上">9人及以上</option>
+</select>
+
+
+
+
+<p class="child-people control-group">儿童<span class="cell-wrap-select">
+
+<select name="c1" >
+<option value=1>1</option>
+<option value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+<option value=7>7</option>
+<option value=8>8</option>
+
+
+</select>
+
+<p class="ptxt">选择你的出行目的地：</p>
+
+<select name="s1" id="destination_final" >
+<option value="普罗旺斯">普罗旺斯</option>
+<option value="巴黎">巴黎</option>
+<option value="波尔多">波尔多</option>
+<option value="图尔">图尔</option>
+<option value="荷兰">荷兰</option>
+<option value="法国周边">法国周边</option>
+</select>
+
+<div class="cultural">
+<p >选择你喜欢的类型 </p>
+<input type="checkbox" name="cultural1" value="village"/>
+  小镇
+<input type="checkbox" name="cultural1" value="ville"/>
+  城市
+<input type="checkbox" name="cultural1" value="culture" />
+  文化
+<input type="checkbox" name="cultural1"  value="sea"/>
+  山水风光
+</div>
+
+
+
+<div class="comment-p">
+<p><i class="icon-pchelper-n5"></i> 补充说明你的需求</p>
+<TEXTAREA name="need" rows=5 COLS=40>你需要的具体要求</TEXTAREA> <P>
+</div>
+
+
+
+</form>
+
+
+
+<button onclick="destination()">提交</button>
+
+ <div class="report">
+	<p>出行日期 </p> <p id="data_t"> </p>
+	
+	
+	
+	<p>目的地是 </p>
+	<p id="des_t"> </p>
+	<p>旅行天数 </p>
+	<p id="day_t"> </p>
+	<p id="text_t"> </p>
+	<p>成人 </p>
+	<p id="adult_t"> </p>
+	<p>儿童	</p>
+	<p id="child_t"> </p>
+	<p>推荐路线	</p>
+	<a id="ligne_t" href="http://www.ipiaoling.com"> </a> </br>
+	<input id="booking"type="button" value="更多详细需求" style="display:none" onclick="affiche()"/>
+	
+</div>	
+
+<form action="adress de serveur" method="get">
+<p id="VoyagerTete" style="display:none">务必要把你的信息写准确哦，客服会尽快给你满意的答复，亲</p>
+  <p id="VoyagerName_1" style="display:none">名字：</p><input id="VoyagerName" type="text" name="名字" style="display:none">
+  <p id="VoyagerPhone_1" style="display:none">电话：</p><input id="VoyagerPhone" type="text" name="电话" style="display:none"><br>
+  <p id="Voyagermail_1" style="display:none">邮件: </p><input id="Voyagermail" type="text" name="邮件" style="display:none"><br>
+  
+  <div class="comment-p">
+<p id="VoyagerNeed_1" style="display:none"> 补充说明你的需求</p>
+<TEXTAREA id="VoyagerNeed" name="need" rows=5 COLS=40 style="display:none">你需要的具体要求</TEXTAREA> <P>
+</div>
+  <input id="Voyagersubmit" type="submit" value="提交你的资料" style="display:none" />
+</form>
+	
+ <script type="text/javascript" language="javascript">
+ 
+function affiche(){
+	document.getElementById("VoyagerName").style.display="";
+	document.getElementById("VoyagerName_1").style.display="";
+	document.getElementById("VoyagerPhone").style.display="";
+	document.getElementById("VoyagerPhone_1").style.display="";
+	document.getElementById("Voyagermail").style.display="";
+	document.getElementById("Voyagermail_1").style.display="";
+	document.getElementById("VoyagerNeed_1").style.display="";
+	document.getElementById("VoyagerNeed").style.display="";
+	document.getElementById("Voyagersubmit").style.display="";
+	document.getElementById("VoyagerTete").style.display="";
+}
+
+function hid(){
+	document.getElementById("VoyagerName").style.display="none";
+	document.getElementById("VoyagerName_1").style.display="none";
+	document.getElementById("VoyagerPhone").style.display="none";
+	document.getElementById("VoyagerPhone_1").style.display="none";
+	document.getElementById("Voyagermail").style.display="none";
+	document.getElementById("Voyagermail_1").style.display="none";
+	document.getElementById("VoyagerNeed_1").style.display="none";
+	document.getElementById("VoyagerNeed").style.display="none";
+	document.getElementById("Voyagersubmit").style.display="none";
+	document.getElementById("VoyagerTete").style.display="none";
+}
+ 
+
+ function destination(){
+	
+	cultural1=document.forms[0].cultural1
+	var adult=document.f1.adult.options[document.f1.adult.selectedIndex].value;
+	var child=document.f1.c1.options[document.f1.c1.selectedIndex].value;
+	
+	
+	var text=document.f1.need.value;
+	var data=document.f1.daystart.value;
+	var dest_wish=document.f1.s1.options[document.f1.s1.selectedIndex].value;
+	var day=document.f1.d1.options[document.f1.d1.selectedIndex].value;
+	var ligne_fav;
+	
+	if(adult>=2&& day<=3 && dest_wish=="巴黎" )
+	{
+	
+	if (cultural1[1].checked)
+	{
+	ligne_fav=itinerarys[0].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[0].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[0].checked)
+	{
+	ligne_fav=itinerarys[1].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[1].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[2].checked)
+	{
+	ligne_fav=itinerarys[2].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[2].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[3].checked)
+	{
+	ligne_fav=itinerarys[3].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[3].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if(cultural1[0].checked==false&&cultural1[1].checked==false&&cultural1[2].checked==false&&cultural1[3].checked==false){
+	ligne_fav="亲你还没选择你的旅游偏好呢，填好再提交，你就能得到推荐线路咯";
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	
+	
+	}	
+	else{
+	ligne_fav="现在没有合适的路线，请点下面的按钮留下你的联系方式，我们客户会尽快联系你";
+	document.getElementById("booking").style.display="";
+	}
+	
+	document.getElementById("des_t").innerHTML=dest_wish;
+	document.getElementById("day_t").innerHTML=day; 
+	document.getElementById("data_t").innerHTML=data; 
+	document.getElementById("text_t").innerHTML=text; 
+	document.getElementById("child_t").innerHTML=child; 
+	document.getElementById("adult_t").innerHTML=adult; 
+	
+	
+	
+	document.getElementById("ligne_t").innerHTML=ligne_fav; 
+}
+
+ 
+
+
+ </script>
+</body>
+</html>    
