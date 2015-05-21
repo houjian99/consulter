@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="jquery-ui.min.css">
   <script src="jquery.min.js"></script>
   <script src="jquery-ui.min.js"></script>
-  
+   <script src="itinerary.js"></script>
   <link rel="stylesheet" href="style.css">
   <script>
   $(function() {
@@ -150,37 +150,7 @@
 	
  <script type="text/javascript" language="javascript">
  
-function loadXMLDoc(filename)
-{
-if (window.XMLHttpRequest)
-  {
-  xhttp=new XMLHttpRequest();
-  }
-else // code for IE5 and IE6
-  {
-  xhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xhttp.open("GET",filename,false);
-xhttp.send();
-return xhttp.responseXML;
-}
 
-function readOneLable(nodeName,xmlName,childNodeName,nodeNo)
-  {  
-    var my_array = new Array();  
-    //加载xml文件  
-    xmlDoc=loadXMLDoc(xmlName);  
-                  
-    //取得节点名为nodeName的节点  
-        var d = xmlDoc.getElementsByTagName(nodeName)[nodeNo];                
-    var ab = d.childNodes;  
-    for(var i = 0;i<ab.length;i++){  
-          if(ab[i].nodeName == childNodeName){  
-            my_array.push(ab[i].childNodes[0].nodeValue);                         
-          }  
-    }  
-    return my_array;  
-	}
  
 
  function destination(){
@@ -207,23 +177,23 @@ function readOneLable(nodeName,xmlName,childNodeName,nodeNo)
 	
 	if (cultural1[1].checked)
 	{
-	ligne_fav=readOneLable("itineraryId","http://localhost/web/itinerary.xml","itineraryName",0);
-	document.getElementById("ligne_t").href=readOneLable("itineraryId","itinerary.xml","itineraryHerf",0);
+	ligne_fav=itinerarys[0].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[0].itineraryHerf;
 	}
 	if (cultural1[0].checked)
 	{
-	ligne_fav=readOneLable("itineraryId","http://localhost/web/itinerary.xml","itineraryName",1);
-	document.getElementById("ligne_t").href=readOneLable("itineraryId","itinerary.xml","itineraryHerf",1);
+	ligne_fav=itinerarys[1].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[1].itineraryHerf;
 	}
 	if (cultural1[2].checked)
 	{
-	ligne_fav=readOneLable("itineraryId","http://localhost/web/itinerary.xml","itineraryName",2);
-	document.getElementById("ligne_t").href=readOneLable("itineraryId","itinerary.xml","itineraryHerf",2);
+	ligne_fav=itinerarys[2].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[2].itineraryHerf;
 	}
 	if (cultural1[3].checked)
 	{
-	ligne_fav=readOneLable("itineraryId","http://localhost/web/itinerary.xml","itineraryName",3);
-	document.getElementById("ligne_t").href=readOneLable("itineraryId","itinerary.xml","itineraryHerf",3);
+	ligne_fav=itinerarys[3].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[3].itineraryHerf;
 	}
 	
 	
