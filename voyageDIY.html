@@ -77,6 +77,7 @@
 <p class="child-people control-group">儿童<span class="cell-wrap-select">
 
 <select name="c1" >
+<option value=0>0</option>
 <option value=1>1</option>
 <option value=2>2</option>
 <option value=3>3</option>
@@ -114,10 +115,6 @@
 
 
 
-<div class="comment-p">
-<p><i class="icon-pchelper-n5"></i> 补充说明你的需求</p>
-<TEXTAREA name="need" rows=5 COLS=40>你需要的具体要求</TEXTAREA> <P>
-</div>
 
 
 
@@ -125,7 +122,7 @@
 
 
 
-<button onclick="destination()">提交</button>
+<button onclick="destination();">提交</button>
 
  <div class="report">
 	<p>出行日期 </p> <p id="data_t"> </p>
@@ -196,7 +193,7 @@ function hid(){
 	var child=document.f1.c1.options[document.f1.c1.selectedIndex].value;
 	
 	
-	var text=document.f1.need.value;
+	
 	var data=document.f1.daystart.value;
 	var dest_wish=document.f1.s1.options[document.f1.s1.selectedIndex].value;
 	var day=document.f1.d1.options[document.f1.d1.selectedIndex].value;
@@ -241,15 +238,304 @@ function hid(){
 	
 	
 	}	
+	
+	
+	else if(adult>=2&& day==1 && dest_wish=="普罗旺斯" )
+	{
+	
+	if (cultural1[1].checked)
+	{
+	ligne_fav=itinerarys[7].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[7].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[0].checked)
+	{
+	ligne_fav=itinerarys[7].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[7].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[2].checked)
+	{
+	ligne_fav=itinerarys[8].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[8].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[3].checked)
+	{
+	ligne_fav=itinerarys[5].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[5].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if(cultural1[0].checked==false&&cultural1[1].checked==false&&cultural1[2].checked==false&&cultural1[3].checked==false){
+	ligne_fav="亲你还没选择你的旅游偏好呢，填好再提交，你就能得到推荐线路咯";
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	
+	
+	}	
+	
+	
+	else if(adult>=2&& day>=2 && dest_wish=="普罗旺斯" )
+	{
+	
+	if (cultural1[1].checked)
+	{
+	ligne_fav=itinerarys[4].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[4].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[0].checked)
+	{
+	ligne_fav=itinerarys[4].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[4].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[2].checked)
+	{
+	ligne_fav=itinerarys[6].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[6].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[3].checked)
+	{
+	ligne_fav=itinerarys[4].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[4].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if(cultural1[0].checked==false&&cultural1[1].checked==false&&cultural1[2].checked==false&&cultural1[3].checked==false){
+	ligne_fav="亲你还没选择你的旅游偏好呢，填好再提交，你就能得到推荐线路咯";
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	
+	
+	}	
+
+	
+	else if(adult>=2&& day==1 && dest_wish=="图尔" )
+	{
+	
+	if (cultural1[1].checked)
+	{
+	ligne_fav=itinerarys[13].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[13].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[0].checked)
+	{
+	ligne_fav=itinerarys[13].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[13].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[2].checked)
+	{
+	ligne_fav=itinerarys[13].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[13].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[3].checked)
+	{
+	ligne_fav=itinerarys[13].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[13].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if(cultural1[0].checked==false&&cultural1[1].checked==false&&cultural1[2].checked==false&&cultural1[3].checked==false){
+	ligne_fav="亲你还没选择你的旅游偏好呢，填好再提交，你就能得到推荐线路咯";
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	
+	
+	}	
+	
+	
+	
+	else	if(adult>=2&& day==1 && dest_wish=="波尔多" )
+	{
+	
+	if (cultural1[1].checked)
+	{
+	ligne_fav=itinerarys[9].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[9].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[0].checked)
+	{
+	ligne_fav=itinerarys[9].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[9].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[2].checked)
+	{
+	ligne_fav=itinerarys[10].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[10].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[3].checked)
+	{
+	ligne_fav=itinerarys[10].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[10].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if(cultural1[0].checked==false&&cultural1[1].checked==false&&cultural1[2].checked==false&&cultural1[3].checked==false){
+	ligne_fav="亲你还没选择你的旅游偏好呢，填好再提交，你就能得到推荐线路咯";
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	
+	
+	}	
+	
+	
+	else	if(adult>=2&& day==3 && dest_wish=="荷兰" )
+	{
+	
+	if (cultural1[1].checked)
+	{
+	ligne_fav=itinerarys[11].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[11].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[0].checked)
+	{
+	ligne_fav=itinerarys[11].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[11].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[2].checked)
+	{
+	ligne_fav=itinerarys[11].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[11].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[3].checked)
+	{
+	ligne_fav=itinerarys[11].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[11].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if(cultural1[0].checked==false&&cultural1[1].checked==false&&cultural1[2].checked==false&&cultural1[3].checked==false){
+	ligne_fav="亲你还没选择你的旅游偏好呢，填好再提交，你就能得到推荐线路咯";
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	
+	
+	}	
+	
+	
+	else	if(adult>=2&& day==2 && dest_wish=="荷兰" )
+	{
+	
+	if (cultural1[1].checked)
+	{
+	ligne_fav=itinerarys[12].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[12].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[0].checked)
+	{
+	ligne_fav=itinerarys[12].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[12].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[2].checked)
+	{
+	ligne_fav=itinerarys[12].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[12].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[3].checked)
+	{
+	ligne_fav=itinerarys[12].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[12].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if(cultural1[0].checked==false&&cultural1[1].checked==false&&cultural1[2].checked==false&&cultural1[3].checked==false){
+	ligne_fav="亲你还没选择你的旅游偏好呢，填好再提交，你就能得到推荐线路咯";
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	
+	
+	}	
+	
+	
+	else	if(adult>=2&& day>=3 && dest_wish=="法国周边" )
+	{
+	
+	if (cultural1[1].checked)
+	{
+	ligne_fav=itinerarys[14].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[14].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[0].checked)
+	{
+	ligne_fav=itinerarys[14].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[14].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[2].checked)
+	{
+	ligne_fav=itinerarys[14].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[14].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if (cultural1[3].checked)
+	{
+	ligne_fav=itinerarys[14].itineraryName;
+	document.getElementById("ligne_t").href=itinerarys[14].itineraryHerf;
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	if(cultural1[0].checked==false&&cultural1[1].checked==false&&cultural1[2].checked==false&&cultural1[3].checked==false){
+	ligne_fav="亲你还没选择你的旅游偏好呢，填好再提交，你就能得到推荐线路咯";
+	hid();
+	document.getElementById("booking").style.display="";
+	}
+	
+	
+	}	
 	else{
 	ligne_fav="现在没有合适的路线，请点下面的按钮留下你的联系方式，我们客户会尽快联系你";
 	document.getElementById("booking").style.display="";
 	}
 	
+	
 	document.getElementById("des_t").innerHTML=dest_wish;
 	document.getElementById("day_t").innerHTML=day; 
 	document.getElementById("data_t").innerHTML=data; 
-	document.getElementById("text_t").innerHTML=text; 
+	 
 	document.getElementById("child_t").innerHTML=child; 
 	document.getElementById("adult_t").innerHTML=adult; 
 	
